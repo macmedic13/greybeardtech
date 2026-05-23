@@ -1,0 +1,45 @@
+{{/*
+  Subscribe partial — Buttondown email list signup.
+
+  TO ACTIVATE:
+  1. Create account at https://buttondown.com and note your username.
+  2. Replace "greybeardtech" in the form action URLs below with your Buttondown username.
+  3. Uncomment the block below (remove the opening <!-- and closing --> HTML comment markers).
+  4. In layouts/index.html, uncomment the line: {{`{{ partial "subscribe.html" . }}`}}
+  5. Optionally include on single post pages by overriding layouts/_default/single.html.
+*/}}
+
+<!--
+<section class="subscribe-section">
+  <hr style="border:none;border-top:1px solid var(--border);margin:32px 0 24px;">
+  <h3 style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;margin:0 0 6px;">
+    Get new posts by email
+  </h3>
+  <p style="font-size:13px;color:var(--secondary);margin:0 0 14px;line-height:1.5;">
+    Plain language for people who run the machines.
+    No tracking, no spam. Unsubscribe anytime.
+  </p>
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/greybeardtech"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.com/greybeardtech', 'popupwindow')"
+    style="display:flex;gap:8px;flex-wrap:wrap;"
+  >
+    <input
+      type="email"
+      name="email"
+      id="bd-email"
+      placeholder="you@example.com"
+      required
+      style="flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:13px;background:var(--entry);color:var(--ink);"
+    >
+    <button
+      type="submit"
+      style="padding:8px 18px;background:var(--ink);color:var(--paper);font-family:'IBM Plex Sans',sans-serif;font-size:13px;border:none;cursor:pointer;"
+    >
+      Subscribe
+    </button>
+  </form>
+</section>
+-->
