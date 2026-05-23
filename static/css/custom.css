@@ -1,0 +1,171 @@
+/* ============================================================
+   Greybeard Tech — Design Token Overrides for PaperMod
+   ============================================================ */
+
+/* --- Tokens --- */
+:root {
+  --paper: #ecedea;
+  --ink:   #0f1822;
+  --ember: #2d5a3d;
+
+  /* Override PaperMod's light theme variables */
+  --theme:     var(--paper);
+  --entry:     #ffffff;
+  --primary:   var(--ink);
+  --secondary: #555555;
+  --border:    #cccccc;
+  --content:   var(--ink);
+}
+
+/* --- Typography --- */
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+.site-header,
+nav,
+.nav,
+button,
+label {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+code,
+pre,
+kbd,
+.post-meta {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+/* --- No gradients, no drop shadows --- */
+*,
+*::before,
+*::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  background-image: none !important;
+}
+
+/* --- Max 2px border radius --- */
+*,
+*::before,
+*::after {
+  border-radius: 2px !important;
+}
+
+/* ============================================================
+   Homepage — Card Grid (top 4 posts)
+   ============================================================ */
+
+.recent-posts {
+  margin-bottom: 8px;
+}
+
+.archive-label {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 14px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.post-card {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  padding: 16px;
+}
+
+.post-card .tag {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 6px;
+}
+
+.post-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.post-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-card h3 a:hover {
+  color: var(--ember);
+}
+
+.post-card .excerpt {
+  font-size: 13px;
+  color: var(--secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================================
+   Homepage — Archive List
+   ============================================================ */
+
+.archive-posts {
+  margin-top: 8px;
+}
+
+.archive-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 0 16px;
+}
+
+.archive-list {
+  width: 100%;
+}
+
+.archive-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 14px;
+}
+
+.archive-item a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.archive-item a:hover {
+  color: var(--ember);
+}
+
+.archive-item .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #aaaaaa;
+  white-space: nowrap;
+  margin-left: 16px;
+}
