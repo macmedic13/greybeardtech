@@ -1,0 +1,46 @@
+baseURL: 'https://greybeardtech.ca/'
+locale: 'en-CA'
+title: 'Greybeard Tech'
+
+module:
+  imports:
+    - path: github.com/adityatelange/hugo-PaperMod
+
+params:
+  defaultTheme: light
+  disableThemeToggle: true
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: false
+  ShowShareButtons: false
+  ShowToc: false
+
+  homeInfoParams:
+    Title: ""
+    Content: ""
+
+  socialIcons:
+    - name: rss
+      url: /index.xml
+
+menu:
+  main:
+    - name: Writing
+      url: /
+      weight: 1
+    - name: About
+      url: /about/
+      weight: 2
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+outputs:
+  home:
+    - HTML
+    - RSS
