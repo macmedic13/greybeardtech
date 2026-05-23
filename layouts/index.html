@@ -1,0 +1,50 @@
+{{ define "main" }}
+<main class="main">
+
+  {{/* ── Recent: top 4 posts as cards ── */}}
+  {{ $allPosts := where .Site.RegularPages "Type" "posts" }}
+  {{ $recent := first 4 $allPosts }}
+
+  {{ if $recent }}
+  <section class="recent-posts">
+    <span class="archive-label">— Recent —</span>
+    <div class="card-grid">
+      {{ range $recent }}
+      <article class="post-card">
+        {{ with .Params.tags }}
+        <span class="tag">{{ index . 0 }}</span>
+        {{ end }}
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Summary }}<p class="excerpt">{{ . }}</p>{{ end }}
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* ── Archive: everything after the top 4 ── */}}
+  {{ $archive := after 4 $allPosts }}
+
+  {{ if $archive }}
+  <section class="archive-posts">
+    <span class="archive-label">— Archive —</span>
+    <hr class="archive-divider">
+    <div class="archive-list">
+      {{ range $archive }}
+      <div class="archive-item">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="meta">
+          {{ .Date.Format "2006-01-02" }}
+          {{ with .Params.tags }} · {{ index . 0 }}{{ end }}
+        </span>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* ── Subscribe (commented out until activated) ── */}}
+  {{/* {{ partial "subscribe.html" . }} */}}
+
+</main>
+{{ end }}
